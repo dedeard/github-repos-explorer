@@ -9,6 +9,6 @@ describe('App Component', () => {
 
   it('renders the heading', () => {
     const heading = screen.getByRole('heading', { level: 1 })
-    expect(heading).toHaveTextContent('Vite + React')
+    expect(heading).toHaveTextContent('GitHub Repositories Explorer')
   })
 })
