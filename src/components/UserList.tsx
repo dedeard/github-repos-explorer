@@ -15,7 +15,7 @@ const UserList: React.FC = () => {
 
   useEffect(() => {
     if (activeIndex !== null && userItemsRef.current[activeIndex]) {
-      userItemsRef.current[activeIndex]?.scrollIntoView({
+      userItemsRef.current[activeIndex]?.scrollIntoView?.({
         behavior: 'smooth',
         block: 'nearest',
       })
@@ -105,6 +105,7 @@ const UserList: React.FC = () => {
 
       <div
         ref={containerRef}
+        data-testid="user-list"
         tabIndex={0}
         className="divide-y divide-gray-200 overflow-hidden rounded-lg border border-neutral-200 shadow-sm outline-none"
       >
