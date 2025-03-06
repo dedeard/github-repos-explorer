@@ -1,4 +1,4 @@
-name: Deploy
+name: Test and Deploy
 
 on:
   push:
@@ -6,8 +6,8 @@ on:
       - main
 
 jobs:
-  build:
-    name: Build
+  test:
+    name: Test
     runs-on: ubuntu-latest
 
     steps:
@@ -16,6 +16,28 @@ jobs:
 
       - name: Setup Node
         uses: actions/setup-node@v3
+        with:
+          node-version: '20' # Specifying a Node.js version compatible with React 19
+
+      - name: Install dependencies
+        uses: bahmutov/npm-install@v1
+
+      - name: Run tests
+        run: npm run test
+
+  build:
+    name: Build
+    needs: test # This ensures the build job only runs if tests pass
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
 
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
