@@ -12,18 +12,20 @@ const App: React.FC = () => {
     <div className="min-h-screen bg-neutral-50">
       <Header />
 
-      <div className="container mx-auto -mt-10 max-w-5xl p-4">
-        <SearchBar />
+      <main className="container mx-auto -mt-10 max-w-5xl p-4">
+        <nav role="search">
+          <SearchBar />
+        </nav>
 
         {error && <ErrorMessage message={error} />}
 
         {!loading && searchPerformed && users.length > 0 && (
-          <div className="mb-6">
+          <section className="mb-6" aria-label="Search Results">
             {!!executedSearchQuery && <h2 className="mb-4 text-lg font-medium text-gray-700">Showing users for "{executedSearchQuery}"</h2>}
             <UserList />
-          </div>
+          </section>
         )}
-      </div>
+      </main>
     </div>
   )
 }

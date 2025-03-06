@@ -12,9 +12,9 @@ const RepositoryList: React.FC<RepositoryListProps> = ({ repositories }) => {
   }
 
   return (
-    <div className="space-y-3">
+    <ul className="space-y-3" role="list" aria-label="User repositories">
       {repositories.map((repo) => (
-        <div key={repo.id} className="rounded-lg border border-gray-200 bg-white p-4 transition-shadow hover:shadow-md">
+        <li key={repo.id} className="rounded-lg border border-gray-200 bg-white p-4 transition-shadow hover:shadow-md">
           <div className="flex items-start justify-between">
             <div className="min-w-0 flex-1">
               <h3 className="truncate text-lg font-medium text-gray-900">
@@ -56,9 +56,9 @@ const RepositoryList: React.FC<RepositoryListProps> = ({ repositories }) => {
               </div>
             </div>
           </div>
-        </div>
+        </li>
       ))}
-    </div>
+    </ul>
   )
 }
 

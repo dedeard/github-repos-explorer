@@ -68,7 +68,7 @@ const SearchBar: React.FC = () => {
         <button
           onClick={handleClick}
           disabled={loading}
-          className="flex w-full cursor-pointer items-center justify-center rounded bg-blue-500 px-6 py-3 text-white transition duration-200 hover:bg-blue-600 disabled:cursor-default disabled:opacity-50"
+          className="flex w-full cursor-pointer items-center justify-center rounded bg-blue-600 px-6 py-3 text-white transition duration-200 hover:bg-blue-700 disabled:cursor-default disabled:opacity-50"
         >
           {loading ? (
             <>

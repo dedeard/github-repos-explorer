@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://dedeard.github.io/github-repos-explorer/sitemap.xml
