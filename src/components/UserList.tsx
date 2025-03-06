@@ -57,6 +57,7 @@ const UserList: React.FC = () => {
     return () => {
       window.removeEventListener('keydown', handleKeypress)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [users, expandedIndex, activeIndex])
 
   const toggleUser = async (index: number, user: User) => {
